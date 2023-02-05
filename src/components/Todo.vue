@@ -80,8 +80,12 @@ export default {
     data(){
         return {
             title: "TODO",
-            todos: [{item: "Welcome to my TODO App", id: 1, isCompleted: false}],
-            filteredTodos: [{item: "Welcome to my TODO App", id: 1, isCompleted: false}],
+            todos: [{item: "Welcome to Rahmlad TODO App", id: 1, isCompleted: false}, 
+                {item: "To get started, create a new todo", id: 2, isCompleted: false},
+                {item: "Once done, mark it as completed", id: 3, isCompleted: false}],
+            filteredTodos: [{item: "Welcome to Rahmlad TODO App", id: 1, isCompleted: false}, 
+                {item: "To get started, create a new todo", id: 2, isCompleted: false},
+                {item: "Once done, mark it as completed", id: 3, isCompleted: false}],
             item: "",
             isdarkMode: false,
             isFiltered: false,
@@ -91,7 +95,6 @@ export default {
     methods: {
         toggle(mode){
             this.isdarkMode = mode
-            // document.documentElement.className = mode;
             localStorage.setItem('darktheme', mode)
         },
         addTodo(){
