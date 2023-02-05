@@ -8,6 +8,7 @@
   min-height: 100vh;
   transition: ease;
   transition-duration: 500ms;
+  background-color: var(--light);
 }
 
 .header-img {
@@ -35,7 +36,7 @@
 }
 
 .head h1.title {
-  color: var(--light);
+  color: hsl(0, 0%, 98%);
   font-weight: 700;
   letter-spacing: 10px;
 }
@@ -45,11 +46,11 @@
 }
 
 .input-div {
-  background-color: var(--light);
+  background-color: var(--light-body);
   border-radius: 4px;
   padding: 10px;
   margin-bottom: 30px;
-  box-shadow: 4px 4px 8px 4px var(--dark)
+  box-shadow: 1px 1px 8px 1px var(--shadow);
 }
 
 .input-div button {
@@ -57,7 +58,7 @@
   width: 20px;
   cursor: pointer;
   border-radius: 50%;
-  border: 2px solid var(--light-primary);
+  border: 2px solid hsl(0, 0%, 78%);
   background: linear-gradient(to right bottom, hsl(192, 100%, 67%) 5%, hsl(280, 87%, 65%));
   margin-left: 10px;
 }
@@ -84,11 +85,11 @@ input::placeholder {
 }
 
 .todo-body {
-  background-color: var(--light);
+  background-color: var(--light-body);
   border-radius: 4px;
-  box-shadow: 4px 4px 8px 4px var(--dark);
+  box-shadow: 1px 1px 8px 1px var(--shadow);
   height: fit-content;
-  max-height: calc(100vh - 250px);
+  max-height: calc(100vh - 300px);
   overflow-y: auto;
 }
 .todo-list {
@@ -134,7 +135,7 @@ input::placeholder {
 }
 
 .todo-item {
-  font-size: 20px;
+  font-size: 18px;
   color: var(--dark);
 }
 
@@ -142,13 +143,24 @@ input::placeholder {
   display: flex;
   justify-content: space-between;
   padding: 7px 20px 14px 20px;
+  color: var(--dark);
 }
 
 .todo-footer button {
   border: none;
   background-color: transparent;
+  color: var(--dark);
+  opacity: 50%;
 }
 
+.todo-footer button:hover {
+  opacity: 90%;
+}
+
+.active {
+  color: hsl(233, 97%, 57%) !important;
+  opacity: 100% !important;
+}
 
 /* General/utility classes */
 .none {
@@ -163,13 +175,51 @@ button, .pointer {
   opacity: 50%;
 }
 
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.5s ease;
+}
+
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+}
+
+.list-enter-from,
+.list-leave-to {
+  transform: translateX(-50px);
+}
+
 .transition {
   transition: ease;
   transition-duration: 500ms;
 }
 
+.mobile {
+  display: none;
+}
+
 @media (max-width: 1440px) {
     
+}
+@media (max-width: 450px) {
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: flex;
+  }
+  .todo-footer {
+    padding: 0px 20px 8px 20px;
+  }
+  .todo-footer.mobile {
+    margin-top: 10px;
+    padding-top: 10px;
+    background-color: var(--light-body);
+    border-radius: 4px;
+    box-shadow: 1px 1px 8px 1px var(--shadow);
+    height: fit-content;
+  }
 }
 
 
@@ -184,4 +234,6 @@ button, .pointer {
     background-size: cover;
     background-position: center top;
   }
+  
+  
 }
