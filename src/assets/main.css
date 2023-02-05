@@ -1,4 +1,5 @@
 @import './base.css';
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
 
 .body {
   position: relative;
@@ -89,7 +90,7 @@ input::placeholder {
   border-radius: 4px;
   box-shadow: 1px 1px 8px 1px var(--shadow);
   height: fit-content;
-  max-height: calc(100vh - 300px);
+  max-height: calc(100vh - 275px);
   overflow-y: auto;
 }
 .todo-list {
@@ -135,6 +136,7 @@ input::placeholder {
 }
 
 .todo-item {
+  font-family: var(--font-family);
   font-size: 18px;
   color: var(--dark);
 }
@@ -158,9 +160,16 @@ input::placeholder {
 }
 
 .active {
-  color: hsl(233, 97%, 57%) !important;
+  color: hsl(228, 45%, 44%) !important;
   opacity: 100% !important;
 }
+
+.attribution { 
+  font-size: 11px; 
+  text-align: center; 
+  margin: 10px 0;
+}
+    .attribution a { color: hsl(228, 45%, 44%); }
 
 /* General/utility classes */
 .none {

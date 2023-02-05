@@ -62,21 +62,24 @@
                     </div>
                 </div>                
             </div>
-            <div class="todo-footer mobile">
+            <div class="todo-footer mobile transition">
                 <button :class="{'active': filterStatus === 'All' }" @click="allTodos">All</button>
                 <button :class="{'active': filterStatus === 'Active' }" @click="activeFilter">Active</button>
                 <button :class="{'active': filterStatus === 'Completed' }" @click="completedFilter">Completed</button>
             </div>
         </div>
+        
+        <div class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+            Coded by <a href="https://abdrahman-oladimeji.web.app">Rahmlad</a>.
+          </div>
         </div>
     </div>
 </template>
 
 <script>
-import Button from './Button.vue';
 export default {
     name: "Todo",
-    components: { Button },
     data(){
         return {
             title: "TODO",
@@ -171,7 +174,6 @@ export default {
 </script>
 
 <style scoped>
-
 .has-line-through {
     text-decoration: line-through;
     opacity: 40%;
